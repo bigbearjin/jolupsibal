@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#191c26">
+  <title>Countdown</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 오른쪽 상단 관리자 코드 입력창 -->
+  <header class="top-bar">
+    <input
+      type="password"
+      id="accessCode"
+      placeholder="CODE"
+      autocomplete="off"
+      aria-label="관리자 코드"
+    >
+    <span id="accessStatus"></span>
+  </header>
+
+  <main class="main-container">
+    <section class="countdown-container">
+
+      <div class="calendar">
+        <div class="calendar-header">
+          <span id="calendarYear"></span>
+          <span id="calendarMonth"></span>
+        </div>
+
+        <div class="calendar-grid" id="calendarGrid"></div>
+      </div>
+
+      <div class="countdown-info">
+        <p id="eventText">졸업까지</p>
+        <h1 id="countdown">D-000</h1>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- 관리자 설정 창 -->
+  <div class="settings-overlay" id="settingsOverlay">
+    <div class="settings-box">
+
+      <div class="settings-header">
+        <div>
+          <p class="settings-subtitle">PERSONAL SETTINGS</p>
+          <h2>정보 수정</h2>
+        </div>
+        <button id="closeSettings" class="close-button">×</button>
+      </div>
+
+      <label for="dateInput">목표 날짜</label>
+      <input type="date" id="dateInput">
+
+      <label for="textInput">표시할 문구</label>
+      <input
+        type="text"
+        id="textInput"
+        maxlength="30"
+        placeholder="예: 졸업까지"
+      >
+
+      <div class="settings-buttons">
+        <button id="cancelSettings" class="cancel-button">
+          취소
+        </button>
+        <button id="saveSettings" class="save-button">
+          저장하기
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
