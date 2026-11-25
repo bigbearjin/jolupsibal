@@ -14,6 +14,7 @@
 
 body {
   min-height: 100vh;
+
   background:
     radial-gradient(
       ellipse at 50% 35%,
@@ -26,14 +27,18 @@ body {
       #232735 50%,
       #15171e 100%
     );
+
   background-attachment: fixed;
   color: var(--text);
+
   font-family:
     -apple-system,
     BlinkMacSystemFont,
     "Pretendard",
     "Noto Sans KR",
     sans-serif;
+
+  overflow-x: hidden;
 }
 
 /* 관리자 입력창 */
@@ -42,7 +47,9 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+
   padding: 27px 32px;
+
   display: flex;
   align-items: center;
   gap: 8px;
@@ -51,13 +58,16 @@ body {
 #accessCode {
   width: 125px;
   padding: 10px 8px;
+
   background: transparent;
   border: none;
   border-bottom: 1px solid rgba(255,255,255,0.2);
+
   color: white;
   text-align: center;
   font-size: 11px;
   letter-spacing: 2px;
+
   outline: none;
   transition: 0.3s;
 }
@@ -74,22 +84,26 @@ body {
   font-size: 12px;
 }
 
-/* 메인 */
+/* 메인 화면 */
 
 .main-container {
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   padding: 90px 20px;
 }
 
 .countdown-container {
   width: 100%;
   max-width: 390px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   animation: appear 0.8s ease;
 }
 
@@ -98,10 +112,13 @@ body {
 .calendar {
   width: 100%;
   max-width: 330px;
+
   padding: 25px;
+
   background: var(--surface);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 20px;
+
   box-shadow: 0 20px 60px rgba(0,0,0,0.18);
   backdrop-filter: blur(15px);
 }
@@ -110,10 +127,54 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   margin-bottom: 23px;
+  min-height: 30px;
+}
+
+.calendar-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
   font-size: 15px;
   font-weight: 500;
 }
+
+/* 달력 이동 버튼 */
+
+.month-arrow {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #c5cad5;
+
+  font-size: 25px;
+  font-weight: 300;
+
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.month-arrow:hover:not(:disabled) {
+  background: rgba(255,255,255,0.09);
+  color: white;
+}
+
+.month-arrow:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+/* 달력 날짜 */
 
 .calendar-grid {
   display: grid;
@@ -123,11 +184,14 @@ body {
 
 .calendar-day {
   height: 35px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   font-size: 12px;
   color: #c0c4ce;
+
   border-radius: 10px;
 }
 
@@ -140,7 +204,9 @@ body {
 .calendar-day.target {
   background: #e8eaf0;
   color: #222735;
+
   font-weight: 700;
+
   box-shadow: 0 3px 12px rgba(255,255,255,0.12);
 }
 
@@ -149,11 +215,13 @@ body {
   color: white;
 }
 
-/* D-day */
+/* D-Day */
 
 .countdown-info {
   width: 100%;
+
   margin-top: 45px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,17 +230,21 @@ body {
 
 #countdown {
   color: white;
+
   font-size: clamp(52px, 12vw, 76px);
   font-weight: 600;
   letter-spacing: -4px;
   line-height: 1.1;
+
   white-space: nowrap;
 }
 
 #eventText {
   color: #d9dbe1;
+
   font-size: 18px;
   font-weight: 400;
+
   white-space: nowrap;
 }
 
@@ -182,14 +254,19 @@ body {
   position: fixed;
   inset: 0;
   z-index: 10;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   padding: 20px;
+
   background: rgba(8, 10, 16, 0.65);
   backdrop-filter: blur(12px);
+
   opacity: 0;
   visibility: hidden;
+
   transition: 0.3s ease;
 }
 
@@ -201,11 +278,16 @@ body {
 .settings-box {
   width: 100%;
   max-width: 360px;
+
   padding: 30px;
+
   border-radius: 20px;
+
   background: #252a37;
   border: 1px solid rgba(255,255,255,0.07);
+
   box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+
   transform: translateY(15px);
   transition: 0.3s ease;
 }
@@ -218,13 +300,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   margin-bottom: 30px;
 }
 
 .settings-subtitle {
   color: #858e9f;
+
   font-size: 9px;
   letter-spacing: 3px;
+
   margin-bottom: 8px;
 }
 
@@ -236,14 +321,18 @@ body {
 .close-button {
   background: none;
   border: none;
+
   color: #aeb5c3;
   font-size: 27px;
+
   cursor: pointer;
 }
 
 .settings-box label {
   display: block;
+
   margin: 19px 0 9px;
+
   color: #b9c0cd;
   font-size: 12px;
 }
@@ -251,11 +340,14 @@ body {
 .settings-box input {
   width: 100%;
   padding: 14px;
+
   background: #1b1f29;
   border: 1px solid #3b4251;
   border-radius: 10px;
+
   color: white;
   font-size: 14px;
+
   outline: none;
   color-scheme: dark;
 }
@@ -264,19 +356,25 @@ body {
   border-color: #a7b0c1;
 }
 
+/* 설정 버튼 */
+
 .settings-buttons {
   display: flex;
   gap: 10px;
+
   margin-top: 28px;
 }
 
 .settings-buttons button {
   flex: 1;
   padding: 14px;
+
   border: none;
   border-radius: 10px;
+
   font-size: 13px;
   cursor: pointer;
+
   transition: 0.2s;
 }
 
@@ -314,6 +412,7 @@ body {
 /* 모바일 */
 
 @media (max-width: 480px) {
+
   .top-bar {
     padding: 20px;
   }
@@ -327,6 +426,10 @@ body {
     padding: 20px;
   }
 
+  .calendar-day {
+    height: 34px;
+  }
+
   .countdown-info {
     margin-top: 38px;
     gap: 12px;
@@ -338,5 +441,22 @@ body {
 
   #eventText {
     font-size: 15px;
+  }
+}
+
+/* 작은 화면 높이 대응 */
+
+@media (max-height: 650px) {
+  .main-container {
+    padding-top: 80px;
+    padding-bottom: 25px;
+  }
+
+  .calendar {
+    padding: 15px 20px;
+  }
+
+  .countdown-info {
+    margin-top: 25px;
   }
 }
